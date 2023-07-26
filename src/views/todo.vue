@@ -2,7 +2,7 @@
   <div>
     <h1>Todo</h1>
     <div>
-      <input type="text" v-model="currentTodo" />
+      <input type="text" v-model="currentTodoName" />
       <button @click="addTodo">add</button>
     </div>
     <todo-list v-model:todo-list="todoArr"></todo-list>
@@ -17,6 +17,7 @@ import TodoList from "./todo-list.vue";
   components: { TodoList },
 })
 export default class Todo extends Vue {
+  currentTodoName = "";
   // todoList
   todoArr = [
     { name: "todo1", done: false },
@@ -24,18 +25,16 @@ export default class Todo extends Vue {
     { name: "todo3", done: false },
   ];
 
-  @Model()
-  currentTodo = "";
-
   // add todo
   addTodo() {
-    if (!this.currentTodo) return;
+    if (!this.currentTodoName) return;
 
     this.todoArr.push({
-      name: this.currentTodo,
+      name: this.currentTodoName,
       done: false,
     });
-    this.currentTodo = "";
+
+    this.currentTodoName = "";
   }
 }
 </script>
