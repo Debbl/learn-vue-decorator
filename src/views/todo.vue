@@ -17,15 +17,15 @@ import TodoList from "./todo-list.vue";
   components: { TodoList },
 })
 export default class Todo extends Vue {
-  @Model()
-  currentTodo = "";
-
   // todoList
   todoArr = [
     { name: "todo1", done: false },
     { name: "todo2", done: true },
     { name: "todo3", done: false },
   ];
+
+  @Model()
+  currentTodo = "";
 
   // add todo
   addTodo() {
