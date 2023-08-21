@@ -1,11 +1,11 @@
 <template>
   <li>
-    <span>{{ todo.name }}</span>
+    <span>{{ todo.title }}</span>
     -
     <span>{{ todo.done ? "done" : "doing" }}</span>
     <span>
       <button @click="removeTodo">remove</button>
-      <button @click="switchTodo">switch</button>
+      <button @click="toggleTodo">switch</button>
     </span>
   </li>
 </template>
@@ -18,17 +18,16 @@ export default class TodoItem extends Vue {
   // todo
   @Prop({ type: Object, default: () => ({}) })
   todo!: {
-    name: string;
+    title: string;
     done: boolean;
   };
 
-  // remove todo
   @Emit()
   removeTodo() {
     console.log("remove todo");
   }
   @Emit()
-  switchTodo() {
+  toggleTodo() {
     console.log("switch todo");
   }
 }

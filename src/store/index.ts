@@ -1,13 +1,11 @@
 import Vue from "vue";
-import Vuex from "vuex";
+import Vuex, { StoreOptions } from "vuex";
+import { RootState } from "./types";
+import todoStore from "./todo";
 
 Vue.use(Vuex);
 
-interface RootState {
-  counter: number;
-}
-
-const store = new Vuex.Store<RootState>({
+const rootStore: StoreOptions<RootState> = {
   state: {
     counter: 0,
   },
@@ -26,13 +24,20 @@ const store = new Vuex.Store<RootState>({
     // add
     add(state, payload: number) {
       state.counter += payload;
-    }
+    },
   },
   actions: {
     incrementAction(context) {
       context.commit("increment");
-    }
-  }
+    },
+  },
+};
+
+const store = new Vuex.Store<RootState>({
+  ...rootStore,
+  modules: {
+    todoStore,
+  },
 });
 
 export default store;
