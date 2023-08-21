@@ -27,6 +27,11 @@ const store = new Vuex.Store<RootState>({
     add(state, payload: number) {
       state.counter += payload;
     }
+  },
+  actions: {
+    incrementAction(context) {
+      context.commit("increment");
+    }
   }
 });
 

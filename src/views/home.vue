@@ -10,12 +10,16 @@
       <button @click="add(5)">+5</button>
       <button @click="add(-5)">-5</button>
     </div>
+    <div>
+      <p>action</p>
+      <button @click="incrementAction">+</button>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { State, Getter, Mutation } from "vuex-class";
+import { State, Getter, Mutation, Action } from "vuex-class";
 
 @Component
 export default class Home extends Vue {
@@ -33,5 +37,8 @@ export default class Home extends Vue {
 
   @Mutation
   add!: (num: number) => void;
+
+  @Action
+  incrementAction!: () => void;
 }
 </script>
