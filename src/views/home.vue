@@ -1,33 +1,20 @@
 <template>
   <div class="">
-    <p>count {{ count }}</p>
-    <p>double count {{ double }}</p>
-    <button @click="increment">+</button>
-    <button @click="decrement">-</button>
+    <p>counter {{ counter }}</p>
+    <p>counter + 1: {{ counterPlusOne }}</p>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { State, Getter } from "vuex-class";
 
 @Component
 export default class Home extends Vue {
-  // count
-  count = 0;
+  @State("counter")
+  counter!: number;
 
-  // increment
-  increment() {
-    this.count++;
-  }
-  // decrement
-  decrement() {
-    this.count--;
-  }
-  get double() {
-    return this.count * 2;
-  }
+  @Getter("counterPlusOne")
+  counterPlusOne!: number;
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>

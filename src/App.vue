@@ -2,7 +2,7 @@
   <div>
     <home></home>
     <br />
-    <todo></todo>
+    <!-- <todo></todo> -->
   </div>
 </template>
 

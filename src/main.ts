@@ -1,6 +1,9 @@
 import Vue from "vue";
 import App from "./App.vue";
+import store from "./store";
 
-const app = new Vue(App);
-console.log("🚀 ~ file: main.ts:5 ~ app:", app)
-app.$mount("#app")
+const app = new Vue({
+  el: "#app",
+  store,
+  render: (h) => h(App),
+});

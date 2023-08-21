@@ -6,11 +6,15 @@ specifiers:
   vue: '2'
   vue-class-component: ^7.2.6
   vue-property-decorator: ^9.1.2
+  vuex: 3.4.0
+  vuex-class: 0.3.2
 
 dependencies:
   vue: 2.7.14
   vue-class-component: 7.2.6_vue@2.7.14
   vue-property-decorator: 9.1.2_jtyyyychrtcflhl7vfprhmeb3y
+  vuex: 3.4.0_vue@2.7.14
+  vuex-class: 0.3.2_yuhmfmtpnik547fu7boro6ha4y
 
 devDependencies:
   '@vitejs/plugin-vue2': 2.2.0_vite@4.4.9+vue@2.7.14
@@ -392,3 +396,23 @@ packages:
     dependencies:
       '@vue/compiler-sfc': 2.7.14
       csstype: 3.1.2
+
+  /vuex-class/0.3.2_yuhmfmtpnik547fu7boro6ha4y:
+    resolution: {integrity: sha1-x+lqB2wWghN9TSOo3P3GPyIOF6g=}
+    peerDependencies:
+      vue: ^2.5.0
+      vue-class-component: ^6.0.0 || ^7.0.0
+      vuex: ^3.0.0
+    dependencies:
+      vue: 2.7.14
+      vue-class-component: 7.2.6_vue@2.7.14
+      vuex: 3.4.0_vue@2.7.14
+    dev: false
+
+  /vuex/3.4.0_vue@2.7.14:
+    resolution: {integrity: sha1-IMwIYGLXUHafzh/rs05/zurr3kU=}
+    peerDependencies:
+      vue: ^2.0.0
+    dependencies:
+      vue: 2.7.14
+    dev: false
