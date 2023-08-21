@@ -1,6 +1,7 @@
 <template>
   <div class="">
     <p>count {{ count }}</p>
+    <p>double count {{ double }}</p>
     <button @click="increment">+</button>
     <button @click="decrement">-</button>
   </div>
@@ -21,6 +22,9 @@ export default class Home extends Vue {
   // decrement
   decrement() {
     this.count--;
+  }
+  get double() {
+    return this.count * 2;
   }
 }
 </script>
