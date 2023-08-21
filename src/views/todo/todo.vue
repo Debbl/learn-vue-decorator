@@ -23,9 +23,6 @@ const TodoStoreNamespace = namespace("todoStore");
 export default class Todo extends Vue {
   currentTodoName = "";
 
-  @TodoStoreNamespace.State
-  todoList!: TodoStore;
-
   @TodoStoreNamespace.Mutation
   addTodo!: (title: string) => void;
 }
