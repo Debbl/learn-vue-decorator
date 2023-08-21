@@ -13,6 +13,20 @@ const store = new Vuex.Store<RootState>({
   },
   getters: {
     counterPlusOne: (state) => state.counter + 1,
+  },
+  mutations: {
+    // increment
+    increment(state) {
+      state.counter++;
+    },
+    // decrement
+    decrement(state) {
+      state.counter--;
+    },
+    // add
+    add(state, payload: number) {
+      state.counter += payload;
+    }
   }
 });
 
